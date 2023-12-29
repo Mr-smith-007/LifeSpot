@@ -1,0 +1,73 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>LifeSpot</title>
+    <style>
+        .video-container {
+            display: inline-block;
+            padding-left: 1%;
+        }
+
+        .navbar {
+            color: darkgray;
+            padding-left: 15%;
+        }
+
+        header {
+            padding-left: 1%;
+        }
+
+        footer {
+            position: absolute;
+            bottom: 0;
+        }
+
+        aside {
+            height: 100%; 
+            width: 10%;
+            position: absolute; 
+            z-index: 1; 
+            top: 0; 
+            left: 0;
+            background-color: #111; 
+            overflow-x: hidden; 
+            padding-top: 20px;
+        }
+
+        body {
+            padding-left: 11%;
+        }
+    </style>
+</head>
+<header>
+    <h1>LifeSpot - прямые трансляции с улиц</h1>
+    <p>Покажем, что происходит прямо сейчас</p>
+</header>
+<aside id="sidebar">
+    <div class="navbar">
+        <p>Все трансляции</p>
+        <p>О проекте</p>
+    </div>
+</aside>
+<body>
+    <div class="bordered">
+        <div class="video-container">
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/GSmCh4DrbWY?si=bluGEHOWHA2_SZuL" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+            <h3 class="video-title">Нью-Йорк, Брайант Парк</h3>
+        </div>
+        <div class="video-container">
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/h1wly909BYw?si=aA1LVQo4vtG9gCaH" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+            <h3 class="video-title">Санкт-Петербург, Невский Проспект</h3>
+        </div>
+        <div class="video-container">
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/JplMzss6_YE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            <h3 class="video-title">Лондон, автобусный маршрут</h3>
+        </div>
+    </div>
+</body>
+<footer>
+<p>LifeSpot - все права защищены</p>
+<p>Связаться с нами: contact@lifespot.ru</p>
+</footer>
+</html>
