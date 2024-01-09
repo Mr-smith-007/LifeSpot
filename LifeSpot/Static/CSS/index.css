@@ -2,6 +2,10 @@
     font-family: "Helvetica 65 Medium", sans-serif;
 }
 
+header, footer, body, .video-container {
+    background-color: #98ebbc
+}
+
 .video-container {
     display: inline-block;
     padding-left: 1%;
