@@ -5,8 +5,15 @@
     <title>LifeSpot</title>
     <link href="../Static/CSS/index.css" rel="stylesheet" type="text/css">
     <script>
-       alert("Приветствуем на LifeSpot! " + new Date().toLocaleString());
-    </script>
+        let age = prompt('Введите ваш возраст');
+        if (age >= 18) {
+            alert("Приветствуем на LifeSpot! " + new Date().toLocaleString())
+        }
+        else {
+            alert("Наши трансляции не предназначены для лиц моложе 18 лет. Вы будете перенаправлены");
+            window.location.href = "http://www.google.com"
+        }
+    </script>    
 </head>
 <header id="header-index">
     <h1>LifeSpot - прямые трансляции с улиц</h1>
