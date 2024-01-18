@@ -1,4 +1,4 @@
-﻿function handleSession() {
+﻿var handleSession = function() {
     let session = new Map();
     session.set("userAgent", window.navigator.userAgent);
     session.set("age", prompt("Пожалуйста, введите ваш возраст?"));
@@ -19,7 +19,7 @@
     }
 }
 
-function filterContent() {
+var filterContent = function() {
 
     let inputString = document.getElementsByTagName('input')[0].value.toLowerCase();
 
