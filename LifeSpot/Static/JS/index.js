@@ -1,4 +1,11 @@
-﻿var handleSession = function() {
+﻿let sessionLog = function logSession(session) {
+    for (let result of session) {
+        console.log(result)
+    }
+}
+
+
+function handleSession() {
     let session = new Map();
     session.set("userAgent", window.navigator.userAgent);
     session.set("age", prompt("Пожалуйста, введите ваш возраст?"));
@@ -11,16 +18,13 @@
     else {
         alert("Наши трансляции не предназначены для лиц моложе 18 лет. Вы будете перенаправлены");
         window.location.href = "http://www.google.com"
-        a = true + 20 + "name"
     }
 
-    for (let result of session) {
-        console.log(result)
-    }
+    return session;
 }
 
-var filterContent = function(userInput) {
-        
+var filterContent = function (userInput) {
+
     let elements = document.getElementsByClassName('video-container');
 
     for (let i = 0; i <= elements.length; i++) {
