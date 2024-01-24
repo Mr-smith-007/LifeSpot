@@ -23,7 +23,7 @@ function handleSession() {
     return session;
 }
 
-var filterContent = function (inputParseFunction) {
+var filterContent = function () {
 
     let elements = document.getElementsByClassName('video-container');
 
