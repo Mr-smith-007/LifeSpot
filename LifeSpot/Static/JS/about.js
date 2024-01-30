@@ -1,27 +1,36 @@
-function getComment() {    
-    let comment = {}
-        
-    comment.author = prompt("Как вас зовут ?")
-    if (comment.author == null) {
-        return
-    }
-        
-    comment.text = prompt("Оставьте отзыв")
-    if (comment.text == null) {
-        return
-    }
-       
-    comment.date = new Date().toLocaleString()
-        
-    let enableLikes = confirm('Разрешить пользователям оценивать ваш отзыв?')
+function Comment() {	
+	this.author = prompt("Как вас зовут ?")
+	if (this.author == null) {
+		this.empty = true
+		return
+	}
+	
+	this.text = prompt("Оставьте отзыв")
+	if (this.text == null) {
+		this.empty = true
+		return
+	}	
 
-    if (enableLikes) {        
-        let review = Object.create(comment)        
-        review.rate = 0;                
-        writeReview(review)
-    } else {        
-        writeReview(comment)
-    }
+	this.date = new Date().toLocaleString()
+}
+
+
+function addComment() {
+	let comment = new Comment()
+		
+	if (comment.empty) {
+		return;
+	}	
+
+	let enableLikes = confirm('Разрешить пользователям оценивать ваш отзыв?')
+
+	if (enableLikes) {		
+		let review = Object.create(comment)		
+		review.rate = 0;		
+		writeReview(review)
+	} else {		
+		writeReview(comment)
+	}
 }
 
 
