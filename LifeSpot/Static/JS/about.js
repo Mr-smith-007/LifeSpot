@@ -1,11 +1,11 @@
-function Comment() {	
-	this.author = prompt("Êàê âàñ çîâóò ?")
+ï»¿function Comment() {	
+	this.author = prompt("ĞšĞ°Ğº Ğ²Ğ°Ñ Ğ·Ğ¾Ğ²ÑƒÑ‚ ?")
 	if (this.author == null) {
 		this.empty = true
 		return
 	}
 	
-	this.text = prompt("Îñòàâüòå îòçûâ")
+	this.text = prompt("ĞÑÑ‚Ğ°Ğ²ÑŒÑ‚Ğµ Ğ¾Ñ‚Ğ·Ñ‹Ğ²")
 	if (this.text == null) {
 		this.empty = true
 		return
@@ -22,7 +22,7 @@ function addComment() {
 		return;
 	}	
 
-	let enableLikes = confirm('Ğàçğåøèòü ïîëüçîâàòåëÿì îöåíèâàòü âàø îòçûâ?')
+	let enableLikes = confirm('Ğ Ğ°Ğ·Ñ€ĞµÑˆĞ¸Ñ‚ÑŒ Ğ¿Ğ¾Ğ»ÑŒĞ·Ğ¾Ğ²Ğ°Ñ‚ĞµĞ»ÑĞ¼ Ğ¾Ñ†ĞµĞ½Ğ¸Ğ²Ğ°Ñ‚ÑŒ Ğ²Ğ°Ñˆ Ğ¾Ñ‚Ğ·Ñ‹Ğ²?')
 
 	if (enableLikes) {		
 		let review = Object.create(comment)		
@@ -38,11 +38,27 @@ const writeReview = review => {
 	let likeCounter = '';
 		
 	if (review.hasOwnProperty('rate')) {
-		likeCounter += '           <b style="color: chocolate">Ğåéòèíã:</b>   ' + review.rate;
+		let commentId = Math.random();
+		likeCounter += '<button id="' + commentId + '" style="border: none" onclick="addLike(this.id)">' + `â¤ï¸ ${review.rate}</button>`
 	}		
 
 	document.getElementsByClassName('reviews')[0].innerHTML += '    <div class="review-text">\n' +
 		`<p> <i> <b>${review['author']}</b>  ${review['date']}${likeCounter}</i></p>` +
 		`<p>${review['text']}</p>` +
 		'</div>';
+}
+
+
+function addLike(id) {	
+	let element = document.getElementById(id);
+		
+	let array = element.innerText.split(' ')
+	
+	let resultNum = parseInt(array[array.length - 1], 10);
+		
+	resultNum += 1
+		
+	array[array.length - 1] = `${resultNum}`
+		
+	element.innerText = array.join(' ')
 }
